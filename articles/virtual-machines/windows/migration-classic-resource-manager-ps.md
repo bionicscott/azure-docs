@@ -235,6 +235,13 @@ First, validate if you can migrate the virtual network by using the following co
     Move-AzureVirtualNetwork -Validate -VirtualNetworkName $vnetName
 ```
 
+To view errors or warnings from the validate step, use the following command:
+
+```powershell
+    $validate = Move-AzureVirtualNetwork -Validate -VirtualNetworkName $vnetName
+    $validate.ValidationMessages
+```
+
 The preceding command displays any warnings and errors that block migration. If validation is successful, then you can proceed with the following Prepare step:
 
 ```powershell
